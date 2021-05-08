@@ -59,7 +59,7 @@ class ProductCardView extends StatelessWidget {
             height: double.infinity,
             decoration: BoxDecoration(
                 image: DecorationImage(
-                  image: (image != null || image == '')? Image.file(File(image)).image : AssetImage('assets/image/image_icon.png'),
+                  image: (image != '')? Image.file(File(image)).image : AssetImage('assets/image/image_icon.png'),
                   fit: BoxFit.cover,
                 ),
                 borderRadius: BorderRadius.circular(20.0)
@@ -91,6 +91,6 @@ class ProductCardView extends StatelessWidget {
           )
         ],
       ),
-    );;
+    );
   }
 }

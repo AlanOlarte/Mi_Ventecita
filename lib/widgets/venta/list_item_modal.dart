@@ -45,11 +45,11 @@ class ListaItems extends StatelessWidget {
           ),
         ),
         Center(
-            child: Text('Total: \$ ${precioTotal.precio}', style: TextStyle(fontSize: 40.0),)
+            child: _customText('Total: \$ ${precioTotal.precio}', 40.0)
         ),
         SizedBox(height: 20.0,),
         TextButton(
-          child: Text('Vender', style: TextStyle(fontSize: 35.0),),
+          child: _customText('Vender', 35.0),
           onPressed: (){
             final pago = (precioTotal.pago == 0.0)? precioTotal.precio : precioTotal.pago;
             if(listaProducto.myList.isNotEmpty) {
@@ -67,15 +67,22 @@ class ListaItems extends StatelessWidget {
         ),
         SizedBox(height: 20.0,),
         Center(
-            child: Text('Pago: \$ ${precioTotal.pago}', style: TextStyle(fontSize: 40.0),)
+            child: _customText('Pago: \$ ${precioTotal.pago}', 40.0)
         ),
         SizedBox(height: 20.0,),
         Center(
-            child: Text('Cambio: \$ ${precioTotal.cambio}', style: TextStyle(fontSize: 40.0),)
+            child: _customText('Cambio: \$ ${precioTotal.cambio}', 40.0)
         ),
         SizedBox(height: 20.0,),
         NumericKeypad()
       ],
+    );
+  }
+
+  Widget _customText(String text, double size) {
+    return FittedBox(
+      fit: BoxFit.contain,
+      child: Text(text, style: TextStyle(fontSize: size),)
     );
   }
 }

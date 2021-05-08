@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'dart:io';
 
-import 'file:///C:/Users/xlxn_/Documents/Android_Studio/Productos_Ventas/producto_venta/lib/providers/venta/producto_cantidad.dart';
 import 'file:///C:/Users/xlxn_/Documents/Android_Studio/Productos_Ventas/producto_venta/lib/providers/venta/producto_precio.dart';
 import 'file:///C:/Users/xlxn_/Documents/Android_Studio/Productos_Ventas/producto_venta/lib/providers/venta/list_producto_by_id.dart';
 
@@ -48,14 +47,9 @@ Widget build(BuildContext context) {
 
   return Container(
       height: double.maxFinite,
-      decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(40),
-          color: Colors.blueGrey,
-        image: DecorationImage(
-          image: Image.file(File(image)).image,
-          fit: BoxFit.cover,
-        ),
-      ),
+      decoration: (image != '')?
+      BoxDecoration(borderRadius: BorderRadius.circular(40), image: DecorationImage(image: Image.file(File(image)).image, fit: BoxFit.cover,),):
+      BoxDecoration(borderRadius: BorderRadius.circular(40), gradient: LinearGradient(colors: [Colors.blue[200], Colors.blue[900]], begin: Alignment.topCenter, end: Alignment.bottomCenter)),
       child: Container(
         margin: EdgeInsets.all(5.0),
         child: Column(

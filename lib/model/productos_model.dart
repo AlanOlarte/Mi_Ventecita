@@ -4,6 +4,7 @@ ProductoModel productoModelFromJson(String str) => ProductoModel.fromJson(json.d
 String productoModelToJson(ProductoModel data) => json.encode(data.toJson());
 
 class ProductoModel {
+
   ProductoModel({
     this.id_producto,
     this.nombre,
@@ -11,6 +12,8 @@ class ProductoModel {
     this.descripcion,
     this.image
   });
+
+  //ProductoModel.empty(){}
 
   int id_producto;
   String nombre;

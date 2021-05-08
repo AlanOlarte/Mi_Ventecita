@@ -6,6 +6,7 @@ import 'file:///C:/Users/xlxn_/Documents/Android_Studio/Productos_Ventas/product
 import 'file:///C:/Users/xlxn_/Documents/Android_Studio/Productos_Ventas/producto_venta/lib/pages/venta/venta_producto.dart';
 
 import 'package:producto_venta/providers/ui_provider.dart';
+import 'package:producto_venta/widgets/custom_app_bar.dart';
 import 'package:producto_venta/widgets/custom_navigatorbar.dart';
 
 import 'package:provider/provider.dart';
@@ -18,17 +19,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
 
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Productos'),
-        actions: [
-          IconButton(
-            icon: Icon(Icons.add_business),
-            onPressed: () {
-              Navigator.pushNamed(context, 'productAdd');
-            },
-          )
-        ],
-      ),
+      appBar: CustomAppBar(),
       body: _HomePageBody(),
         bottomNavigationBar: CustomNavigationBar(),
       backgroundColor: Colors.grey[200],

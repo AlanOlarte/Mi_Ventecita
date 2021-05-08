@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'package:intl/date_symbol_data_local.dart';
-
 import 'file:///C:/Users/xlxn_/Documents/Android_Studio/Productos_Ventas/producto_venta/lib/providers/producto/image_file.dart';
 import 'file:///C:/Users/xlxn_/Documents/Android_Studio/Productos_Ventas/producto_venta/lib/providers/detalle/list_detalle_venta.dart';
 import 'file:///C:/Users/xlxn_/Documents/Android_Studio/Productos_Ventas/producto_venta/lib/providers/producto/list_product.dart';

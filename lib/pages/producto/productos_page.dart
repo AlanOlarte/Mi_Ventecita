@@ -18,8 +18,9 @@ class ProductosPages extends StatelessWidget {
       child: ListView.builder(
           itemCount: productos.length,
           itemBuilder: ( _, i ) => Dismissible(
-            key: UniqueKey(),
-            resizeDuration: Duration(milliseconds: 550),
+            //key: UniqueKey(),
+            key: ValueKey(productos[i].id_producto),
+            //resizeDuration: Duration(milliseconds: 550),
             direction: DismissDirection.endToStart,
             background: Container(
               padding: EdgeInsets.only(right: 20),
@@ -27,7 +28,7 @@ class ProductosPages extends StatelessWidget {
               alignment: AlignmentDirectional.centerEnd,
               child: Icon(Icons.delete),
             ),
-            onDismissed: (DismissDirection direction) {
+            onDismissed: (direction) {
               Provider.of<ProductListProvider>(context, listen: false).DeleteProducto(productos[i].id_producto);
             },
             child: Container(

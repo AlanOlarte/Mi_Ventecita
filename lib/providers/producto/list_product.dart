@@ -7,6 +7,7 @@ class ProductListProvider extends ChangeNotifier {
   List<ProductoModel> medicine = [];
 
   Future<ProductoModel> newProducto(String nombre, double precio, String descripcion, String image ) async {
+    if(image == null) image="";
     final newProducto = new ProductoModel(
       nombre: nombre,
       precio: precio,
@@ -33,7 +34,7 @@ class ProductListProvider extends ChangeNotifier {
 
 
   DeleteProducto( int id ) async {
+    medicine.removeWhere((element) => element.id_producto == id);
     await DBProvider.db.deleteProducto(id);
-    this.cargarProducto();
   }
 }
